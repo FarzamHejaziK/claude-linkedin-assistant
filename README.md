@@ -154,9 +154,9 @@ claude-linkedin-assistant/
 │   └── <Company>_contacts.md     ← per-company contact log (gitignored by default)
 │
 └── .claude/
-    └── commands/
-        ├── jobs.md               ← top-level /jobs command
+    └── skills/
         └── jobs/
+            ├── SKILL.md          ← top-level /jobs entrypoint (menu + dispatch)
             ├── _shared.md        ← rules loaded by every sub-flow
             ├── find.md           ← discover jobs
             ├── check.md          ← daily dashboard
