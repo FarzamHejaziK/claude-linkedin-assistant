@@ -7,7 +7,7 @@ Thanks for contributing.
 - Workflow overview: [`README.md`](README.md)
 - Setup: [`REQUIREMENTS.md`](REQUIREMENTS.md)
 - Project rules / canonical values: [`CLAUDE.md`](CLAUDE.md)
-- Per-flow procedures: [`.claude/commands/jobs/`](.claude/commands/jobs/)
+- Per-flow procedures: [`.claude/skills/jobs/`](.claude/skills/jobs/)
 - Maintainers: [`MAINTAINERS.md`](MAINTAINERS.md)
 
 ## How to Contribute
@@ -15,17 +15,17 @@ Thanks for contributing.
 **Pull requests only.** Direct pushes to `main` are blocked.
 
 1. **Bug fixes / small improvements**: fork, branch, open a focused PR.
-2. **Bigger changes** (new flows, structural changes, anything touching multiple `.claude/commands/jobs/*.md` files): open an Issue first to align scope before doing the work.
+2. **Bigger changes** (new flows, structural changes, anything touching multiple `.claude/skills/jobs/*.md` files): open an Issue first to align scope before doing the work.
 3. **Questions**: open an Issue.
 
 ## Before You Open a PR
 
 - Keep the PR scoped to one concern. Don't bundle unrelated changes.
 - The whole repo is markdown + a CSV. There's no build step and no test suite. The "test" is reading the diff carefully and confirming the prose is clear, the rules are consistent across files, and nothing contradicts.
-- If you're changing flow behavior, walk through each affected file in `.claude/commands/jobs/` and check that:
-  - The flow file itself, `_shared.md`, `CLAUDE.md`, `README.md`, and `jobs.md` all agree on the new behavior.
+- If you're changing flow behavior, walk through each affected file in `.claude/skills/jobs/` and check that:
+  - The flow file itself, `_shared.md`, `CLAUDE.md`, `README.md`, and `SKILL.md` all agree on the new behavior.
   - The "Hard rules (re-stated)" section at the bottom of the flow file matches the body of the file.
-- For any new `/jobs <subcommand>`: add the file under `.claude/commands/jobs/`, register it in the menu and dispatch table in `.claude/commands/jobs.md`, and document it in `README.md`.
+- For any new `/jobs <subcommand>`: add the file under `.claude/skills/jobs/`, register it in the menu and dispatch table in `.claude/skills/jobs/SKILL.md`, and document it in `README.md`.
 
 ## PR Description Checklist
 

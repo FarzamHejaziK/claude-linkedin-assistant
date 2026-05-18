@@ -6,7 +6,7 @@ Project rules loaded automatically when Claude works in this folder.
 
 A minimal job-search workspace that pairs `job_tracker.csv` with four Claude-driven flows: find, check, add, and send a first outreach DM to existing 1st-degree LinkedIn connections (status edits are done by hand directly in the CSV).
 
-See `README.md` for the user-facing overview and `REQUIREMENTS.md` for setup. The authoritative command flows live in `.claude/commands/jobs/`.
+See `README.md` for the user-facing overview and `REQUIREMENTS.md` for setup. The authoritative command flows live in `.claude/skills/jobs/`.
 
 ## Where the docs live (read before acting)
 
@@ -15,8 +15,9 @@ See `README.md` for the user-facing overview and `REQUIREMENTS.md` for setup. Th
 | `CLAUDE.md` (this file) | Project-wide hard rules, canonical values |
 | `README.md` | Human-readable workflow overview |
 | `REQUIREMENTS.md` | Setup (Chrome extension, git) |
-| `.claude/commands/jobs/_shared.md` | Shared rules loaded by every `/jobs` sub-flow |
-| `.claude/commands/jobs/{find,check,add,outreach,daily}.md` | Per-flow procedures |
+| `.claude/skills/jobs/SKILL.md` | Top-level `/jobs` entrypoint (menu + dispatch + STEP 0 checks) |
+| `.claude/skills/jobs/_shared.md` | Shared rules loaded by every `/jobs` sub-flow |
+| `.claude/skills/jobs/{find,check,add,outreach,daily}.md` | Per-flow procedures |
 | `resumes/` | User's resume(s). Source of truth for name, target roles, skills, pitch |
 | `resumes/search_profile.md` | (Optional) free-form preferences: must-haves, deal-breakers, interest areas, salary floor, locations. Overrides resume-inferred defaults during `/jobs find`. |
 
@@ -52,7 +53,7 @@ If the user clearly doesn't want a profile and wants to skip, fine — fall back
 3. **Date format:** always `YYYY-MM-DD`.
 4. **Render tracker contents as a clean markdown table** — never raw CSV.
 5. **NEVER use em-dashes (—) in any user-facing message the user sends** — emails, LinkedIn DMs, follow-ups, subject lines, anything outgoing. Use commas, periods, parentheses, or split sentences instead. Em-dashes are a tell of AI-written text. Scan every draft for `—` before showing it; rewrite if found. Internal notes, tracker, contacts files are fine.
-6. **Connection requests: always "Send without a note", never personalized.** LinkedIn rate-limits personalized invites; bulk connection requests must always go through the "Send without a note" button. Per-company quota = `max(0, (10 − count_1st_degree) × 5)`. **No global weekly cap** — keep going until LinkedIn pushes back (CAPTCHA, rate-limit notice). See `.claude/commands/jobs/outreach.md` Step 2C and Step 4B.
+6. **Connection requests: always "Send without a note", never personalized.** LinkedIn rate-limits personalized invites; bulk connection requests must always go through the "Send without a note" button. Per-company quota = `max(0, (10 − count_1st_degree) × 5)`. **No global weekly cap** — keep going until LinkedIn pushes back (CAPTCHA, rate-limit notice). See `.claude/skills/jobs/outreach.md` Step 2C and Step 4B.
 7. **Never attempt file uploads.** LinkedIn / Gmail / ATS file inputs are blocked from automation. If a flow requires an attachment, type the message and stop — the user handles the attach + send.
 
 ## Canonical values

@@ -18,7 +18,7 @@ We aim to acknowledge reports within 5 business days and respond with a timeline
 
 This repo is a markdown-only Claude Code workspace. The "security surface" is small but real:
 
-- **Instructions Claude follows** (under `.claude/commands/`). A malicious PR could embed instructions that exfiltrate user data (resume content, contact lists, LinkedIn cookies) or trigger destructive Chrome actions.
+- **Instructions Claude follows** (under `.claude/skills/`). A malicious PR could embed instructions that exfiltrate user data (resume content, contact lists, LinkedIn cookies) or trigger destructive Chrome actions.
 - **Scripts** if any are added later.
 - **`.gitignore` correctness** — protecting the user's resume and outreach contact log from accidental commits.
 

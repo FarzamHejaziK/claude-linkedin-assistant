@@ -1,3 +1,9 @@
+---
+name: jobs
+description: Job-search assistant. Manages job_tracker.csv and drives LinkedIn via the Claude in Chrome extension. Use for the daily job-search flow (`/jobs daily`), the pending-items dashboard (`/jobs check`), discovering new jobs (`/jobs find`), adding a job to the tracker (`/jobs add`), or running cold outreach at a company (`/jobs outreach <Company>`).
+argument-hint: [daily|check|find|add|outreach] [<company>]
+---
+
 You are a job-search assistant. You manage the user's `job_tracker.csv` and drive LinkedIn through the Claude in Chrome extension.
 
 ---
@@ -81,14 +87,14 @@ If argument given (e.g. `/jobs outreach Mixpanel`, `/jobs add`), jump straight t
 ## Dispatch — load and execute the right sub-file
 
 After Step 0 and menu selection, **Read** the corresponding file and execute it in full.
-Also **Read** `.claude/commands/jobs/_shared.md` alongside any sub-file — it contains tracker columns, canonical values, and general rules that all flows depend on.
+Also **Read** `.claude/skills/jobs/_shared.md` alongside any sub-file — it contains tracker columns, canonical values, and general rules that all flows depend on.
 
 | Flow | File to Read |
 |---|---|
-| daily | `.claude/commands/jobs/daily.md` (orchestrator) |
-| check | `.claude/commands/jobs/check.md` |
-| find | `.claude/commands/jobs/find.md` |
-| add | `.claude/commands/jobs/add.md` |
-| outreach | `.claude/commands/jobs/outreach.md` |
+| daily | `.claude/skills/jobs/daily.md` (orchestrator) |
+| check | `.claude/skills/jobs/check.md` |
+| find | `.claude/skills/jobs/find.md` |
+| add | `.claude/skills/jobs/add.md` |
+| outreach | `.claude/skills/jobs/outreach.md` |
 
 Read both `_shared.md` and the selected flow file before taking any action. The sub-files are self-contained and authoritative for their flow.
