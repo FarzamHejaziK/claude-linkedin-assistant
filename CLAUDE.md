@@ -73,6 +73,8 @@ If the user clearly doesn't want a profile and wants to skip, fine — fall back
 5. **NEVER use em-dashes (—) in any user-facing message the user sends** — emails, LinkedIn DMs, follow-ups, subject lines, anything outgoing. Use commas, periods, parentheses, or split sentences instead. Em-dashes are a tell of AI-written text. Scan every draft for `—` before showing it; rewrite if found. Internal notes, tracker, contacts files are fine.
 6. **Connection requests: always "Send without a note", never personalized.** LinkedIn rate-limits personalized invites; bulk connection requests must always go through the "Send without a note" button. Per-company quota = `max(0, (10 − count_1st_degree) × 5)`. **No global weekly cap** — keep going until LinkedIn pushes back (CAPTCHA, rate-limit notice). See `.claude/commands/jobs/outreach.md` Step 2C and Step 4B.
 7. **Never attempt file uploads.** LinkedIn / Gmail / ATS file inputs are blocked from automation. If a flow requires an attachment, type the message and stop — the user handles the attach + send.
+8. **Outgoing messages are first person.** Every DM, email, or message sent from the user's account must be written as the user speaking ("I'm a senior data scientist...", "I saw the role..."). Never draft outgoing messages in third person ("She is a senior data scientist..."). Third person in a DM reads as obvious AI slop.
+9. **DMs require user confirmation before sending.** Draft the message and show it to the user. Only click Send after they approve. Connection requests (no-note) do not need per-request confirmation.
 
 ## Canonical values
 

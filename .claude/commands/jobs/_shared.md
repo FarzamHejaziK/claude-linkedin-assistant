@@ -106,7 +106,7 @@ Stages 4 and 5 are handled by the user manually (this repo doesn't automate repl
 
 **NEVER use em-dashes (—) in any user-facing message: LinkedIn DMs, anything sent to a contact.** Use a comma, period, parentheses, semicolon, or split into two sentences instead. This is a hard rule. Em-dashes are a tell of AI-written text.
 
-**Fit summaries / background paragraphs are written in THIRD PERSON.** The greeting stays first-person ("Hi <name>,"), but the background paragraph shifts to third person ("She is a senior data scientist..."). The signature is the user's first name. This applies to outreach DMs only. The third-person sentence is built from the user's resume in `resumes/` — see `outreach.md` for the construction recipe.
+**Outgoing messages are FIRST PERSON throughout.** Every DM sent from the user's account is the user speaking: "I'm a senior data scientist...", "I saw the role...", "I'd appreciate...". Never draft a DM in third person ("She is a senior data scientist...") — that reads as obvious AI slop to the recipient. The pitch sentence, the greeting, and the sign-off are all first person. Build the pitch from the user's resume in `resumes/` — see `outreach.md` for the construction recipe.
 
 This rule does NOT apply to:
 - Internal documentation, tracker notes, contacts.md

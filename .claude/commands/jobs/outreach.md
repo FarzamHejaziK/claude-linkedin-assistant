@@ -124,11 +124,11 @@ Close the dialog if skipping.
 - **Years of experience** (from the experience timeline)
 - **Top 2-3 specializations** (from the headline / summary / repeated keywords)
 
-Construct a single third-person sentence about the user. Examples of the right shape:
-> "She is a senior data scientist with 5+ years in experimentation and product analytics, currently at <Employer>."
-> "He is a staff ML engineer with 8+ years building production LLM systems, currently at <Employer>."
+Construct a single first-person sentence about the user. Examples of the right shape:
+> "I'm a senior data scientist with 5+ years in experimentation and product analytics, currently at <Employer>."
+> "I'm a staff ML engineer with 8+ years building production LLM systems, currently at <Employer>."
 
-The pronoun: infer from the name if obvious, otherwise default to omitting the pronoun and starting with the title ("A senior data scientist with..."). Don't invent details not in the resume.
+Don't invent details not in the resume.
 
 **Message style rules (strictly enforced):**
 - Short: 2-3 sentences max
@@ -136,25 +136,25 @@ The pronoun: infer from the name if obvious, otherwise default to omitting the p
 - No em-dashes (—) anywhere
 - No filler phrases like "I hope you're doing well"
 - No "Best, <name>" sign-off — end naturally
-- Background sentence is third person; greeting and sign-off are first person
+- **First person throughout** — the DM is sent from the user's account, so it must read as the user speaking. Never use third person ("He is...", "She is...") in any outgoing message.
 
 **Draft template (adapt by contact's title):**
 
 *If the contact is a recruiter:*
 
-> Hi <First>, <third-person pitch built from the resume>. I saw the <Role> role at <Company> and it looks like a great fit. Would you be open to a referral or sharing more about the team?
+> Hi <First>, <first-person pitch built from the resume>. I saw the <Role> role at <Company> and it looks like a great fit. Would you be open to a referral or sharing more about the team?
 >
 > Thanks,
 > <user's first name>
 
 *If the contact is a peer (DS / engineer / similar):*
 
-> Hi <First>, <third-person pitch built from the resume>. I saw the <Role> opening at <Company> and it looks like a great fit. Would you be open to a referral if it feels right? Would really appreciate it.
+> Hi <First>, <first-person pitch built from the resume>. I saw the <Role> opening at <Company> and it looks like a great fit. Would you be open to a referral if it feels right? Would really appreciate it.
 >
 > Thanks,
 > <user's first name>
 
-**Send directly, no confirmation.** Find the Message button → click → fill the message field with the draft → click Send. Then move on to the next contact in the loop.
+**Show draft, then send after confirmation.** Find the Message button → click → fill the message field with the draft → then show the user the drafted message and wait for explicit approval ("yes" / "send" / "y") before clicking Send. If the user edits or rejects, apply their changes or skip that contact. This ensures no message goes out without the user seeing it first.
 
 If LinkedIn shows a CAPTCHA, "Verify it's you", or any rate-limit notice mid-loop → STOP immediately (same Step 4B rule applies to DMs as to connection requests). Report which contacts were sent and which are still pending.
 
@@ -254,7 +254,7 @@ git commit -am "outreach: <Company> → <N> conn reqs, <M> DMs"
 
 - **Always "Send without a note"** for connection requests. Never click "Add a note".
 - **Per-company quota** from the formula in Step 2C. No global weekly cap — only LinkedIn-side blocks (CAPTCHA, rate-limit notice) stop the loop.
-- **No per-message and no per-batch confirmations.** Connection requests fire silently up to the quota; DMs are typed and sent in the loop without asking. The only stop signal is a LinkedIn-side block.
+- **Connection requests: no per-request confirmation.** They fire silently up to the quota (they're just "Send without a note" — low risk). **DMs: confirmation required.** Every DM draft is shown to the user before clicking Send. The user must approve each message. The only exception to the DM confirmation is a LinkedIn-side block (CAPTCHA, rate-limit), which stops the loop immediately.
 - **No em-dashes** in any drafted message. Scan for `—` and rewrite.
 - **No file attachments.** This flow is text-only LinkedIn (DMs and connection requests). If the user wants to send a resume, they do it manually after a contact agrees to refer.
 - **Don't ask the contact for their email** as a workaround for upload failures.

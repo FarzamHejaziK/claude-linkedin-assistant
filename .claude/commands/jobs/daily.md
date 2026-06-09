@@ -98,6 +98,6 @@ Tomorrow's surface:
 
 - Connection requests always use "Send without a note". Per-company quota from `outreach.md` Step 2C; no global weekly cap (loop only stops on LinkedIn-side block per Step 4B).
 - Never sends a DM with an attachment. The first DM is text only.
-- No per-message and no per-batch confirmations during outreach. The only stop signal is a LinkedIn-side block (CAPTCHA, rate-limit notice).
+- Connection requests: no per-request confirmation (low risk, no-note). DMs: every draft is shown to the user and requires approval before sending.
 - Never use em-dashes in any drafted message.
 - One commit at the end of the daily run, not per-step. No between-step prompts; the orchestrator runs end-to-end.
